@@ -1,3 +1,5 @@
+import time
+
 def factorial (number) -> int :
     """_summary_
     factorial by repetition
@@ -37,6 +39,9 @@ def nCr(n, r) -> int :
     Returns:
         int: 순서 상관없이 선택하는 경우의 수
     """
+    start = time.time()
     numerator = factorial(n)
     denominator = factorial(n-r) * factorial(r)
+    end = time.time()
+    print(f"소요시간 : {end - start}")
     return int(numerator / denominator)
